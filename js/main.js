@@ -109,3 +109,29 @@
     
 })(jQuery);
 
+
+function sendToWhatsApp() {
+    // Grabbing the values from the form IDs
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const phone = document.getElementById('userPhone').value;
+
+    // Basic check to ensure fields aren't empty
+    if (name === "" || email === "" || phone === "") {
+        alert("Please fill in all the details before connecting.");
+        return;
+    }
+
+    // Creating the message (using * for bold text in WhatsApp)
+    const message = "Hello UoN JCC! %0A%0A" + 
+                    "I would like to join the community. Here are my details:%0A" +
+                    "*Name:* " + name + "%0A" +
+                    "*Email:* " + email + "%0A" +
+                    "*Phone:* " + phone;
+
+    // The WhatsApp link (using your contact number)
+    const whatsappUrl = "https://wa.me/254705047204?text=" + message;
+
+    // Opens WhatsApp in a new tab
+    window.open(whatsappUrl, '_blank').focus();
+}

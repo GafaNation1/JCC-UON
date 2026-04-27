@@ -263,7 +263,7 @@
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
                                 <div class="text-center bg-primary py-5 px-4 h-100">
                                     <i class="fa fa-university fa-3x text-secondary mb-3"></i>
-                                    <h1 class="display-5 mb-0" data-toggle="counter-up">7</h1>
+                                    <h1 class="display-5 mb-0" data-toggle="counter-up">8</h1>
                                     <span class="text-dark">Active Campuses</span>
                                 </div>
                             </div>
@@ -309,90 +309,264 @@
     <!-- Features End -->
 
 
-    <!-- Donation Start -->
+    <!-- Campus CUs Start -->
     <div class="container-fluid py-5">
         <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 560px;">
                 <p class="section-title bg-white text-center text-primary px-3">Campuses</p>
-                <h1 class="display-6 mb-4">JCC Coordinated Campus Fellowships</h1>
+                <h1 class="display-6 mb-2">JCC Coordinated Campus Fellowships</h1>
+                <p class="text-muted mb-4">All 8 University of Nairobi campuses have an active Christian Union coordinated by JCC.</p>
             </div>
+
+            <!-- First row — 3 campuses shown by default (alphabetical: Chiromo, Kenya Science, Kikuyu) -->
             <div class="row g-4">
+
+                <!-- 1. Chiromo Campus CU -->
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="donation-item d-flex h-100 p-4">
                         <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
+                            <h6 class="mb-0">Faculty</h6>
+                            <span class="mb-2" style="font-size:11px;">Sciences</span>
                             <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">85%</span>
+                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="fs-4">80%</span>
                                 </div>
                             </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
+                            <h6 class="mb-0">Active</h6>
+                            <span style="font-size:11px;">Members</span>
                         </div>
                         <div class="donation-detail">
                             <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="">
-                                <a href="#" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Main Campus</a>
+                                <img class="img-fluid w-100" src="img/donation-1.jpg" alt="Chiromo Campus CU">
+                                <a href="campus-chiromo.html" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Chiromo</a>
                             </div>
-                            <a href="#" class="h3 d-inline-block">Main Campus CU</a>
-                            <p>The largest Christian Union fellowship with weekly services, Bible studies, and campus-wide events.</p>
-                            <a href="#" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
+                            <a href="campus-chiromo.html" class="h3 d-inline-block">Chiromo Campus CU</a>
+                            <p>Situated off Riverside Drive, serving students of Biological and Physical Sciences through fellowship and discipleship.</p>
+                            <a href="campus-chiromo.html" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
+
+                <!-- 2. Kenya Science Campus CU -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
                     <div class="donation-item d-flex h-100 p-4">
                         <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
+                            <h6 class="mb-0">Faculty</h6>
+                            <span class="mb-2" style="font-size:11px;">Science</span>
                             <div class="progress d-flex align-items-end w-100 h-100 mb-2">
-                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                                    <span class="fs-4">95%</span>
+                                <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                    <span class="fs-4">70%</span>
                                 </div>
                             </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
+                            <h6 class="mb-0">Active</h6>
+                            <span style="font-size:11px;">Members</span>
                         </div>
                         <div class="donation-detail">
                             <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="">
-                                <a href="#" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Kenyatta Campus</a>
+                                <img class="img-fluid w-100" src="img/donation-2.jpg" alt="Kenya Science Campus CU">
+                                <a href="campus-kenya-science.html" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Kenya Science</a>
                             </div>
-                            <a href="#" class="h3 d-inline-block">Kenyatta Campus CU</a>
-                            <p>Vibrant fellowship community with dynamic worship services, outreach programs, and student leadership development.</p>
-                            <a href="#" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
+                            <a href="campus-kenya-science.html" class="h3 d-inline-block">Kenya Science Campus CU</a>
+                            <p>Located along Ngong Road, a growing fellowship community committed to reaching students across the Science campus.</p>
+                            <a href="campus-kenya-science.html" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+
+                <!-- 3. Kikuyu Campus CU -->
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                     <div class="donation-item d-flex h-100 p-4">
                         <div class="donation-progress d-flex flex-column flex-shrink-0 text-center me-4">
-                            <h6 class="mb-0">Raised</h6>
-                            <span class="mb-2">$8000</span>
+                            <h6 class="mb-0">Faculty</h6>
+                            <span class="mb-2" style="font-size:11px;">CEES</span>
                             <div class="progress d-flex align-items-end w-100 h-100 mb-2">
                                 <div class="progress-bar w-100 bg-secondary" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
                                     <span class="fs-4">75%</span>
                                 </div>
                             </div>
-                            <h6 class="mb-0">Goal</h6>
-                            <span>$10000</span>
+                            <h6 class="mb-0">Active</h6>
+                            <span style="font-size:11px;">Members</span>
                         </div>
                         <div class="donation-detail">
                             <div class="position-relative mb-4">
-                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="">
-                                <a href="#" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Chiromo Campus</a>
+                                <img class="img-fluid w-100" src="img/donation-3.jpg" alt="Kikuyu Campus CU">
+                                <a href="campus-kikuyu.html" class="btn btn-sm btn-secondary px-3 position-absolute top-0 end-0">Kikuyu</a>
                             </div>
-                            <a href="#" class="h3 d-inline-block">Chiromo Campus CU</a>
-                            <p>Close-knit community focused on discipleship, prayer groups, and campus evangelism programs.</p>
-                            <a href="#" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
+                            <a href="campus-kikuyu.html" class="h3 d-inline-block">Kikuyu Campus CU</a>
+                            <p>Near Kikuyu Town, home to the College of Education and External Studies. A prayerful and outreach-focused CU community.</p>
+                            <a href="campus-kikuyu.html" class="btn btn-primary w-100 py-3"><i class="fa fa-arrow-right me-2"></i>Visit Campus CU</a>
                         </div>
                     </div>
                 </div>
+
+            </div><!-- /first row -->
+
+            <!-- View All CUs Button -->
+            <div class="text-center mt-5 wow fadeIn" data-wow-delay="0.3s">
+                <button class="btn btn-secondary py-3 px-5 fs-6" data-bs-toggle="modal" data-bs-target="#allCampusesModal">
+                    <i class="fa fa-th-large me-2"></i>View All 8 Campus CUs
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <!-- Campus CUs End -->
+
+
+    <!-- All Campuses Modal -->
+    <div class="modal fade" id="allCampusesModal" tabindex="-1" aria-labelledby="allCampusesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+            <div class="modal-content rounded-0">
+
+                <!-- Modal Header -->
+                <div class="modal-header" style="background-color:#0057A8; padding: 20px 30px;">
+                    <div>
+                        <h4 class="modal-title text-white mb-1" id="allCampusesModalLabel">
+                            <i class="fa fa-university me-2" style="color:#C9A84C;"></i>All JCC Campus Christian Unions
+                        </h4>
+                        <p class="text-white mb-0" style="font-size:14px; opacity:.85;">8 active CUs across the University of Nairobi — listed alphabetically</p>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body p-4" style="background-color:#F4F6FA;">
+                    <div class="row g-4">
+
+                        <!-- 1. Chiromo Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-1.jpg" alt="Chiromo Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Chiromo</span>
+                                </div>
+                                <h5 class="mb-1">Chiromo Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Off Riverside Drive, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Biological &amp; Physical Sciences</p>
+                                <p class="small mb-3">Serving science students through fellowship, Bible study, and outreach ministries on the Riverside Drive campus.</p>
+                                <a href="campus-chiromo.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 2. Kenya Science Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-2.jpg" alt="Kenya Science Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Kenya Science</span>
+                                </div>
+                                <h5 class="mb-1">Kenya Science Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Ngong Road, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Science &amp; Technology</p>
+                                <p class="small mb-3">A dedicated fellowship community along Ngong Road committed to growing in faith and serving the campus community.</p>
+                                <a href="campus-kenya-science.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 3. Kikuyu Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-3.jpg" alt="Kikuyu Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Kikuyu</span>
+                                </div>
+                                <h5 class="mb-1">Kikuyu Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Kikuyu Town, Kiambu</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> College of Education (CEES)</p>
+                                <p class="small mb-3">Active in outreach, prayer, and equipping education students to be Christ-centred leaders in their profession.</p>
+                                <a href="campus-kikuyu.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 4. KNH Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-1.jpg" alt="KNH Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">KNH</span>
+                                </div>
+                                <h5 class="mb-1">KNH Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Kenyatta National Hospital, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Faculty of Health Sciences</p>
+                                <p class="small mb-3">Ministering to health sciences students within the KNH grounds — a compassionate community of faith and service.</p>
+                                <a href="campus-knh.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 5. Lower Kabete Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-2.jpg" alt="Lower Kabete Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Lower Kabete</span>
+                                </div>
+                                <h5 class="mb-1">Lower Kabete Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Lower Kabete Road, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Business &amp; Management Sciences</p>
+                                <p class="small mb-3">A vibrant fellowship reaching business students with the Gospel through worship, outreach, and discipleship.</p>
+                                <a href="campus-lower-kabete.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 6. Main Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-3.jpg" alt="Main Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Main Campus</span>
+                                </div>
+                                <h5 class="mb-1">Main Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> University Way, CBD, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Central Administration &amp; Multi-Faculty</p>
+                                <p class="small mb-3">The flagship CU of the University of Nairobi — home to large-scale fellowships, outreach, and JCC coordination.</p>
+                                <a href="campus-main.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 7. Parklands Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-1.jpg" alt="Parklands Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Parklands</span>
+                                </div>
+                                <h5 class="mb-1">Parklands Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Parklands, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> Faculty of Law</p>
+                                <p class="small mb-3">Equipping law students to be people of integrity and justice — a strong fellowship rooted in Scripture and service.</p>
+                                <a href="campus-parklands.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                        <!-- 8. Upper Kabete Campus CU -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="donation-item d-flex flex-column h-100 p-3 bg-white">
+                                <div class="position-relative mb-3">
+                                    <img class="img-fluid w-100" src="img/donation-2.jpg" alt="Upper Kabete Campus CU">
+                                    <span class="btn btn-sm btn-secondary px-2 position-absolute top-0 end-0" style="font-size:11px;">Upper Kabete</span>
+                                </div>
+                                <h5 class="mb-1">Upper Kabete Campus CU</h5>
+                                <p class="text-muted small mb-1"><i class="fa fa-map-marker-alt text-primary me-1"></i> Off Kapenguria Road, Nairobi</p>
+                                <p class="text-muted small mb-2"><i class="fa fa-graduation-cap text-primary me-1"></i> College of Agriculture &amp; Veterinary Sciences (CAVS)</p>
+                                <p class="small mb-3">Serving agriculture and veterinary students with discipleship, Bible study, and campus-wide fellowship initiatives.</p>
+                                <a href="campus-upper-kabete.html" class="btn btn-primary py-2 mt-auto"><i class="fa fa-arrow-right me-1"></i>View Campus CU</a>
+                            </div>
+                        </div>
+
+                    </div><!-- /modal row -->
+                </div><!-- /modal-body -->
+
+                <!-- Modal Footer -->
+                <div class="modal-footer" style="background-color:#F4F6FA; border-top: 2px solid #C9A84C;">
+                    <p class="text-muted small me-auto mb-0"><i class="fa fa-info-circle text-primary me-1"></i> Individual campus pages are being developed. Contact JCC for direct campus CU connections.</p>
+                    <a href="campuses.html" class="btn btn-primary py-2 px-4">Full Campuses Page</a>
+                    <button type="button" class="btn btn-outline-secondary py-2 px-4" data-bs-dismiss="modal">Close</button>
+                </div>
+
             </div>
         </div>
     </div>
-    <!-- Donation End -->
+    <!-- All Campuses Modal End -->
 
 
     <!-- Donate Start -->
@@ -441,7 +615,77 @@
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-secondary py-3 w-100" type="submit">Connect With JCC</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4 wow fadeIn" data-wow-delay="0.6s">
+                <a class="btn btn-secondary py-2 px-4" href="team.html">View Complete JCC Leadership Team</a>
+            </div>
+        </div>
+    </div>
     <!-- Donate End -->
+
+
+    <!-- JCC Leadership Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="section-title bg-white text-center text-primary px-3">JCC Leadership</p>
+                <h1 class="display-6 mb-4">Meet Our Team</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/team-1.jpg" alt="JCC Chairman">
+                            <h3>JCC Chairman</h3>
+                            <span>Leadership and Strategy</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/team-2.jpg" alt="JCC Secretary">
+                            <h3>JCC Secretary</h3>
+                            <span>Administration and Communication</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="team-item d-flex h-100 p-4">
+                        <div class="team-detail pe-4">
+                            <img class="img-fluid mb-4" src="img/team-3.jpg" alt="JCC Treasurer">
+                            <h3>JCC Treasurer</h3>
+                            <span>Financial Management</span>
+                        </div>
+                        <div class="team-social bg-light d-flex flex-column justify-content-center flex-shrink-0 p-4">
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-x-twitter"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-square btn-primary my-2" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JCC Leadership End -->
 
 
     <!-- Testimonial Start -->
@@ -596,13 +840,13 @@
                     <a class="btn btn-link" href="resources.html">Resources</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">CU Meeting Times</h4>
-                    <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">06:00 pm - 08:00 pm</h6>
-                    <p class="mb-1">Saturday</p>
-                    <h6 class="text-light">10:00 am - 01:00 pm</h6>
-                    <p class="mb-1">Sunday</p>
-                    <h6 class="text-light">09:00 am - 01:00 pm</h6>
+                    <h4 class="text-light mb-4">CUs Meeting Times</h4>
+                    <p class="mb-1">SUNDAY SERVICE</p>
+                    <h6 class="text-light">08:00am - 12:00noon</h6>
+                    <p class="mb-1">FRIDAY SERVICE</p>
+                    <h6 class="text-light">06:30pm - 09:00pm</h6>
+                    <p class="mb-1">MONDAY - FRIDAY</p>
+                    <h6 class="text-light">05:00pm - 07:00pm</h6>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Gallery</h4>
@@ -634,7 +878,7 @@
                         &copy; <a class="fw-semi-bold" href="#">JCC University of Nairobi</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">JCC Media</a>
+                        Designed By <a class="fw-semi-bold" href="https://uonjcc.netlify.app">JCC Media</a>
                     </div>
                 </div>
             </div>

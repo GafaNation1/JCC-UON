@@ -56,7 +56,9 @@
                             </div>
                             <div class="ms-2">
                                 <h6 class="text-primary mb-0">Contact</h6>
-                                <span class="text-white">+254 XXX XXX XXX</span>
+                                <a href="tel:+254705047204" class="text-white text-decoration-none">
+                                    <span>+254 705047204</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -67,7 +69,9 @@
                             </div>
                             <div class="ms-2">
                                 <h6 class="text-primary mb-0">Email</h6>
-                                <span class="text-white">info@jcc-uon.ac.ke</span>
+                                <a href="mailto:info@jcc-uon.ac.ke" class="text-white text-decoration-none">
+                                    <span>info@jcc-uon.ac.ke</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -270,21 +274,21 @@
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
                                 <div class="text-center bg-secondary py-5 px-4 h-100">
                                     <i class="fa fa-users fa-3x text-primary mb-3"></i>
-                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">5000+</h1>
+                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">1200</h1>
                                     <span class="text-white">Student Members</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                                 <div class="text-center bg-secondary py-5 px-4 h-100">
                                     <i class="fa fa-calendar fa-3x text-primary mb-3"></i> 
-                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">150+</h1>
+                                    <h1 class="display-5 text-white mb-0" data-toggle="counter-up">5</h1>
                                     <span class="text-white">Annual Events</span>
                                 </div>
                             </div>
                             <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                                 <div class="text-center bg-primary py-5 px-4 h-100">
                                     <i class="fa fa-church fa-3x text-secondary mb-3"></i>
-                                    <h1 class="display-5 mb-0" data-toggle="counter-up">50+</h1>
+                                    <h1 class="display-5 mb-0" data-toggle="counter-up">95</h1>
                                     <span class="text-dark">Fellowship Groups</span>
                                 </div>
                             </div>
@@ -571,61 +575,49 @@
 
     <!-- Donate Start -->
     <div class="container-fluid donate py-5">
-        <div class="container">
-            <div class="row g-0">
-                <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
-                        <h1 class="display-6 mb-4">Join JCC - Connect With Your Campus CU</h1>
-                        <p class="fs-5 mb-0">Connect with fellow students, find your campus Christian Union, and participate in coordinated events and activities across all University of Nairobi campuses.</p>
-                    </div>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-lg-7 donate-text bg-light py-5 wow fadeIn" data-wow-delay="0.1s">
+                <div class="d-flex flex-column justify-content-center h-100 p-5 wow fadeIn" data-wow-delay="0.3s">
+                    <h1 class="display-6 mb-4">Join JCC - Connect With Your Campus CU</h1>
+                    <p class="fs-5 mb-0">Connect with fellow students, find your campus Christian Union, and participate in coordinated events and activities across all University of Nairobi campuses.</p>
                 </div>
-                <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
-                    <div class="h-100 p-5">
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                        <label for="name">Your Name</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                                        <label class="btn btn-light" for="btnradio1">$10</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio2">$20</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio3">$30</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio4">$40</label>
-
-                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                                        <label class="btn btn-light" for="btnradio5">$50</label>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-secondary py-3 w-100" type="submit">Connect With JCC</button>
+            </div>
+            <div class="col-lg-5 donate-form bg-primary py-5 text-center wow fadeIn" data-wow-delay="0.5s">
+                <div class="h-100 p-5">
+                    <form id="jccForm">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="userName" placeholder="Your Name" required>
+                                    <label for="userName">Your Name</label>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="userEmail" placeholder="Your Email" required>
+                                    <label for="userEmail">Your Email</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="userPhone" placeholder="Your Phone" required>
+                                    <label for="userPhone">Your Phone</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-secondary py-3 w-100" type="button" onclick="sendToWhatsApp()">Connect With JCC</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="text-center mt-4 wow fadeIn" data-wow-delay="0.6s">
-                <a class="btn btn-secondary py-2 px-4" href="team.html">View Complete JCC Leadership Team</a>
-            </div>
+        </div>
+        <div class="text-center mt-4 wow fadeIn" data-wow-delay="0.6s">
+            <a class="btn btn-secondary py-2 px-4" href="team.html">View Complete JCC Leadership Team</a>
         </div>
     </div>
+</div>
     <!-- Donate End -->
 
 
@@ -822,8 +814,16 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">JCC Office</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>University of Nairobi, Main Campus</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254 XXX XXX XXX</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@jcc-uon.ac.ke</p>
+                    <p class="mb-2">
+                        <a href="tel:+254705047204" class="text-white text-decoration-none">
+                            <i class="fa fa-phone-alt me-3"></i>+254 705047204
+                        </a>
+                    </p>
+                    <p class="mb-2">
+                        <a href="mailto:info@jcc-uon.ac.ke" class="text-white text-decoration-none">
+                            <i class="fa fa-envelope me-3"></i>info@jcc-uon.ac.ke
+                        </a>
+                    </p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-x-twitter"></i></a>
                         <a class="btn btn-square btn-primary me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -840,13 +840,13 @@
                     <a class="btn btn-link" href="resources.html">Resources</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-light mb-4">CU Meeting Times</h4>
-                    <p class="mb-1">Monday - Friday</p>
-                    <h6 class="text-light">06:00 pm - 08:00 pm</h6>
-                    <p class="mb-1">Saturday</p>
-                    <h6 class="text-light">10:00 am - 01:00 pm</h6>
-                    <p class="mb-1">Sunday</p>
-                    <h6 class="text-light">09:00 am - 01:00 pm</h6>
+                    <h4 class="text-light mb-4">CUs Meeting Times</h4>
+                    <p class="mb-1">SUNDAY SERVICE</p>
+                    <h6 class="text-light">08:00am - 12:00noon</h6>
+                    <p class="mb-1">FRIDAY SERVICE</p>
+                    <h6 class="text-light">06:30pm - 09:00pm</h6>
+                    <p class="mb-1">MONDAY - FRIDAY</p>
+                    <h6 class="text-light">05:00pm - 07:00pm</h6>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Gallery</h4>
@@ -878,7 +878,7 @@
                         &copy; <a class="fw-semi-bold" href="#">JCC University of Nairobi</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Designed By <a class="fw-semi-bold" href="https://htmlcodex.com">JCC Media</a>
+                        Designed By <a class="fw-semi-bold" href="https://uonjcc.netlify.app">JCC Media</a>
                     </div>
                 </div>
             </div>
