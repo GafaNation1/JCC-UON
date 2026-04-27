@@ -902,6 +902,64 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <!-- JCC Join Form Validation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jccForm = document.getElementById('jccForm');
+            if (jccForm) {
+                jccForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('userName').value.trim();
+                    const email = document.getElementById('userEmail').value.trim();
+                    const phone = document.getElementById('userPhone').value.trim();
+                    
+                    // Clear previous error messages
+                    const errorElements = document.querySelectorAll('.is-invalid');
+                    errorElements.forEach(el => el.classList.remove('is-invalid'));
+                    
+                    let isValid = true;
+                    
+                    // Validate required fields
+                    if (!name) {
+                        document.getElementById('userName').classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    if (!email || !email.includes('@')) {
+                        document.getElementById('userEmail').classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    if (!phone) {
+                        document.getElementById('userPhone').classList.add('is-invalid');
+                        isValid = false;
+                    }
+                    
+                    if (isValid) {
+                        // Show success message
+                        const successDiv = document.createElement('div');
+                        successDiv.className = 'alert alert-success mt-3';
+                        successDiv.innerHTML = '<strong>Thank you ' + name + '!</strong> Your request to join JCC has been received. We will contact you soon with information about your campus CU.';
+                        
+                        // Insert success message after form
+                        jccForm.parentNode.insertBefore(successDiv, jccForm.nextSibling);
+                        
+                        // Reset form
+                        jccForm.reset();
+                        
+                        // Scroll to success message
+                        successDiv.scrollIntoView({ behavior: 'smooth' });
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successDiv.remove();
+                        }, 5000);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
