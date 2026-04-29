@@ -140,21 +140,22 @@ function sendToWhatsApp() {
 document.addEventListener('DOMContentLoaded', function() {
     const joinForm = document.getElementById('joinForm');
 
+    console.log('Script loaded. joinForm found:', joinForm);
+
     if (joinForm) {
         joinForm.addEventListener('submit', function(e) {
             e.preventDefault();
+            console.log('Form submitted!');
 
-            // 1. Capture the input values
             const name = document.getElementById('joinName').value.trim();
             const email = document.getElementById('joinEmail').value.trim();
             const phone = document.getElementById('joinPhone').value.trim();
             const year = document.getElementById('joinYear').value;
             const message = document.getElementById('joinMessage').value.trim();
-
-            // 2. Get the specific campus phone number from the HTML attribute
             const campusWhatsApp = this.getAttribute('data-phone');
 
-            // 3. Build the message string
+            console.log('Captured values:', { name, email, phone, year, message, campusWhatsApp });
+
             const fullMessage = `*New Membership Request*\n\n` +
                                 `*Name:* ${name}\n` +
                                 `*Email:* ${email}\n` +
@@ -162,29 +163,25 @@ document.addEventListener('DOMContentLoaded', function() {
                                 `*Year:* ${year}\n\n` +
                                 `*Message:* ${message}`;
 
-            // 4. Encode the message for the URL
             const encodedMessage = encodeURIComponent(fullMessage);
-
-            // 5. Construct the final URL
             const whatsappUrl = `https://wa.me/${campusWhatsApp}?text=${encodedMessage}`;
 
-            // 6. Show success message immediately
-            const successMsg = document.getElementById('joinSuccessMessage');
-            if (successMsg) {
-                successMsg.style.display = 'block';
-            }
+            console.log('WhatsApp URL:', whatsappUrl);
 
-            // 7. Open WhatsApp FIRST, then reset form after a safe delay
+            const successMsg = document.getElementById('joinSuccessMessage');
+            if (successMsg) successMsg.style.display = 'block';
+
             setTimeout(() => {
+                console.log('Opening WhatsApp now...');
                 window.open(whatsappUrl, '_blank');
 
-                // Reset form only after WhatsApp link has been handed off
                 setTimeout(() => {
                     joinForm.reset();
                     if (successMsg) successMsg.style.display = 'none';
                 }, 5000);
-
-            }, 300); // Small delay so browser doesn't block the popup
+            }, 300);
         });
+    } else {
+        console.error('joinForm NOT FOUND in the DOM!');
     }
 });
