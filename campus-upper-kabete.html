@@ -744,62 +744,55 @@
     <script src="js/main.js"></script>
     
     <!-- Form Validation Script -->
-    <script>
-        document.getElementById('joinForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('joinName').value.trim();
-            const email = document.getElementById('joinEmail').value.trim();
-            const phone = document.getElementById('joinPhone').value.trim();
-            const year = document.getElementById('joinYear').value;
-            const message = document.getElementById('joinMessage').value.trim();
-            
-            // Clear previous error messages
-            const errorElements = document.querySelectorAll('.is-invalid');
-            errorElements.forEach(el => el.classList.remove('is-invalid'));
-            
-            let isValid = true;
-            
-            // Validate required fields
-            if (!name) {
-                document.getElementById('joinName').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!email || !email.includes('@')) {
-                document.getElementById('joinEmail').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!phone) {
-                document.getElementById('joinPhone').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!year) {
-                document.getElementById('joinYear').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!message) {
-                document.getElementById('joinMessage').classList.add('is-invalid');
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Show success message
-                document.getElementById('joinSuccessMessage').style.display = 'block';
-                
-                // Reset form
+    <!-- Form Validation Script -->
+<script>
+    document.getElementById('joinForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('joinName').value.trim();
+        const email = document.getElementById('joinEmail').value.trim();
+        const phone = document.getElementById('joinPhone').value.trim();
+        const year = document.getElementById('joinYear').value;
+        const message = document.getElementById('joinMessage').value.trim();
+
+        // Clear previous errors
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+        let isValid = true;
+
+        if (!name) { document.getElementById('joinName').classList.add('is-invalid'); isValid = false; }
+        if (!email || !email.includes('@')) { document.getElementById('joinEmail').classList.add('is-invalid'); isValid = false; }
+        if (!phone) { document.getElementById('joinPhone').classList.add('is-invalid'); isValid = false; }
+        if (!year) { document.getElementById('joinYear').classList.add('is-invalid'); isValid = false; }
+        if (!message) { document.getElementById('joinMessage').classList.add('is-invalid'); isValid = false; }
+
+        if (isValid) {
+            const campusWhatsApp = this.getAttribute('data-phone');
+
+            const fullMessage = `*New Membership Request*\n\n` +
+                                `*Name:* ${name}\n` +
+                                `*Email:* ${email}\n` +
+                                `*Phone:* ${phone}\n` +
+                                `*Year:* ${year}\n\n` +
+                                `*Message:* ${message}`;
+
+            const encodedMessage = encodeURIComponent(fullMessage);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${campusWhatsApp}&text=${encodedMessage}`;
+
+            document.getElementById('joinSuccessMessage').style.display = 'block';
+            document.getElementById('joinSuccessMessage').scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 300);
+
+            setTimeout(() => {
                 this.reset();
-                
-                // Scroll to success message
-                document.getElementById('joinSuccessMessage').scrollIntoView({ behavior: 'smooth' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('joinSuccessMessage').style.display = 'none';
-                }, 5000);
-            }
-        });
-    </script>
+                document.getElementById('joinSuccessMessage').style.display = 'none';
+            }, 5000);
+        }
+    });
+</script>
 </body>
 
 </html>
