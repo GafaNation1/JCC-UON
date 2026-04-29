@@ -135,3 +135,49 @@ function sendToWhatsApp() {
     // Opens WhatsApp in a new tab
     window.open(whatsappUrl, '_blank').focus();
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const joinForm = document.getElementById('joinForm');
+
+    if (joinForm) {
+        joinForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page from refreshing
+
+            // 1. Get field values
+            const name = document.getElementById('joinName').value;
+            const email = document.getElementById('joinEmail').value;
+            const phone = document.getElementById('joinPhone').value;
+            const year = document.getElementById('joinYear').value;
+            const message = document.getElementById('joinMessage').value;
+            
+            // 2. Get the specific phone number from the form's data attribute
+            const campusWhatsApp = this.getAttribute('data-phone');
+
+            // 3. Format the text (using * for bold in WhatsApp)
+            const text = `*New Membership Request*%0A` +
+                         `--------------------------%0A` +
+                         `*Name:* ${name}%0A` +
+                         `*Email:* ${email}%0A` +
+                         `*Phone:* ${phone}%0A` +
+                         `*Year:* ${year}%0A` +
+                         `*Message:* ${message}`;
+
+            // 4. Construct URL
+            const whatsappUrl = `https://wa.me/${campusWhatsApp}?text=${encodeURIComponent(text).replace(/%250A/g, '%0A')}`;
+
+            // 5. User Feedback
+            const successMsg = document.getElementById('joinSuccessMessage');
+            if (successMsg) {
+                successMsg.style.display = 'block';
+            }
+
+            // 6. Open WhatsApp & Reset Form
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+                joinForm.reset();
+                if (successMsg) successMsg.style.display = 'none';
+            }, 1000); 
+        });
+    }
+});
