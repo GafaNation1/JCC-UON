@@ -137,52 +137,52 @@ function sendToWhatsApp() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const joinForm = document.getElementById('joinForm');
 
     if (joinForm) {
         joinForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // 1. Grab values from the form
+            // 1. Capture the input values
             const name = document.getElementById('joinName').value;
             const email = document.getElementById('joinEmail').value;
             const phone = document.getElementById('joinPhone').value;
             const year = document.getElementById('joinYear').value;
             const message = document.getElementById('joinMessage').value;
             
-            // 2. Get the phone number from the data-phone attribute
+            // 2. Get the specific campus phone number from the HTML attribute
             const campusWhatsApp = this.getAttribute('data-phone');
 
-            // 3. Create the message using standard line breaks (\n)
-            // WhatsApp uses *asterisks* for bold text
-            const text = `*New Membership Request*\n` +
-                         `--------------------------\n` +
-                         `*Name:* ${name}\n` +
-                         `*Email:* ${email}\n` +
-                         `*Phone:* ${phone}\n` +
-                         `*Year of Study:* ${year}\n\n` +
-                         `*Message:*\n${message}`;
+            // 3. Build the message string
+            // We use \n for new lines
+            const fullMessage = `*New Membership Request*\n\n` +
+                                `*Name:* ${name}\n` +
+                                `*Email:* ${email}\n` +
+                                `*Phone:* ${phone}\n` +
+                                `*Year:* ${year}\n\n` +
+                                `*Message:* ${message}`;
 
-            // 4. Encode the entire message properly for a URL
-            const encodedText = encodeURIComponent(text);
+            // 4. Encode the message for the URL
+            const encodedMessage = encodeURIComponent(fullMessage);
 
             // 5. Construct the final URL
-            const whatsappUrl = `https://wa.me/${campusWhatsApp}?text=${encodedText}`;
+            const whatsappUrl = `https://wa.me/${campusWhatsApp}?text=${encodedMessage}`;
 
-            // 6. Visual Feedback
+            // 6. Provide immediate feedback
             const successMsg = document.getElementById('joinSuccessMessage');
             if (successMsg) {
                 successMsg.style.display = 'block';
             }
 
-            // 7. Open WhatsApp and reset form
-            // We use a tiny delay so the user sees the "Success" alert before leaving
+            // 7. Open WhatsApp in a new tab
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: Reset form after a short delay
             setTimeout(() => {
-                window.open(whatsappUrl, '_blank');
                 joinForm.reset();
                 if (successMsg) successMsg.style.display = 'none';
-            }, 800); 
+            }, 3000);
         });
     }
 });
