@@ -550,65 +550,67 @@
 
     <!-- Join This CU Start -->
     <div class="container-fluid py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 560px;">
-                <p class="section-title bg-white text-center text-primary px-3">Join Parklands CU</p>
-                <h1 class="display-6 mb-4">Become Part of Our Fellowship</h1>
-                <p class="text-muted mb-4">Ready to join the Parklands Campus Christian Union? Fill out the form below and We'll get in touch with you.</p>
-            </div>
+    <div class="container">
+        <div class="text-center mx-auto wow fadeIn" data-wow-delay="0.1s" style="max-width: 560px;">
+            <p class="section-title bg-white text-center text-primary px-3">Join Parklands CU</p>
+            <h1 class="display-6 mb-4">Become Part of Our Fellowship</h1>
+            <p class="text-muted mb-4">Ready to join Parklands Campus Christian Union? Fill out the form below and we'll get in touch via WhatsApp.</p>
+        </div>
 
-            <div class="row justify-content-center">
-                <div class="col-lg-8 wow fadeIn" data-wow-delay="0.3s">
-                    <form id="joinForm">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="joinName" placeholder="Full Name" required>
-                                    <label for="joinName">Full Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="joinEmail" placeholder="Email Address" required>
-                                    <label for="joinEmail">Email Address</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="tel" class="form-control" id="joinPhone" placeholder="Phone Number" required>
-                                    <label for="joinPhone">Phone Number</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <select class="form-control" id="joinYear" required>
-                                        <option value="">Select Year of Study</option>
-                                        <option value="1st">1st Year</option>
-                                        <option value="2nd">2nd Year</option>
-                                        <option value="3rd">3rd Year</option>
-                                        <option value="4th">4th Year</option>
-                                    </select>
-                                    <label for="joinYear">Year of Study</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Tell us about yourself and why you want to join Parklands CU" id="joinMessage" style="height: 150px" required></textarea>
-                                    <label for="joinMessage">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary py-3 px-4" type="submit">Join Parklands CU</button>
+        <div class="row justify-content-center">
+            <div class="col-lg-8 wow fadeIn" data-wow-delay="0.3s">
+                <form id="joinForm" data-phone="254705047204">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="joinName" placeholder="Full Name" required>
+                                <label for="joinName">Full Name</label>
                             </div>
                         </div>
-                        <div id="joinSuccessMessage" class="alert alert-success mt-3" style="display: none;">
-                            <strong>Thank you for your interest!</strong> We've received your request and will contact you soon about joining Parklands Campus CU.
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="joinEmail" placeholder="Email Address" required>
+                                <label for="joinEmail">Email Address</label>
+                            </div>
                         </div>
-                    </form>
-                </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="tel" class="form-control" id="joinPhone" placeholder="Phone Number" required>
+                                <label for="joinPhone">Phone Number</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <select class="form-control" id="joinYear" required>
+                                    <option value="">Select Year of Study</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4th Year</option>
+                                    <option value="5th Year+">5th Year+</option>
+                                </select>
+                                <label for="joinYear">Year of Study</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Message" id="joinMessage" style="height: 150px" required></textarea>
+                                <label for="joinMessage">Tell us why you want to join Upper Kabete CU</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-primary w-100 py-3 px-4" type="submit">Send Request via WhatsApp</button>
+                        </div>
+                    </div>
+                    
+                    <div id="joinSuccessMessage" class="alert alert-success mt-3" style="display: none;">
+                        <strong>Thank you!</strong> Opening WhatsApp to send your request...
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
     <!-- Join This CU End -->
 
 
@@ -747,61 +749,53 @@
     
     <!-- Form Validation Script -->
     <script>
-        document.getElementById('joinForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('joinName').value.trim();
-            const email = document.getElementById('joinEmail').value.trim();
-            const phone = document.getElementById('joinPhone').value.trim();
-            const year = document.getElementById('joinYear').value;
-            const message = document.getElementById('joinMessage').value.trim();
-            
-            // Clear previous error messages
-            const errorElements = document.querySelectorAll('.is-invalid');
-            errorElements.forEach(el => el.classList.remove('is-invalid'));
-            
-            let isValid = true;
-            
-            // Validate required fields
-            if (!name) {
-                document.getElementById('joinName').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!email || !email.includes('@')) {
-                document.getElementById('joinEmail').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!phone) {
-                document.getElementById('joinPhone').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!year) {
-                document.getElementById('joinYear').classList.add('is-invalid');
-                isValid = false;
-            }
-            if (!message) {
-                document.getElementById('joinMessage').classList.add('is-invalid');
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Show success message
-                document.getElementById('joinSuccessMessage').style.display = 'block';
-                
-                // Reset form
+    document.getElementById('joinForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('joinName').value.trim();
+        const email = document.getElementById('joinEmail').value.trim();
+        const phone = document.getElementById('joinPhone').value.trim();
+        const year = document.getElementById('joinYear').value;
+        const message = document.getElementById('joinMessage').value.trim();
+
+        // Clear previous errors
+        document.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+
+        let isValid = true;
+
+        if (!name) { document.getElementById('joinName').classList.add('is-invalid'); isValid = false; }
+        if (!email || !email.includes('@')) { document.getElementById('joinEmail').classList.add('is-invalid'); isValid = false; }
+        if (!phone) { document.getElementById('joinPhone').classList.add('is-invalid'); isValid = false; }
+        if (!year) { document.getElementById('joinYear').classList.add('is-invalid'); isValid = false; }
+        if (!message) { document.getElementById('joinMessage').classList.add('is-invalid'); isValid = false; }
+
+        if (isValid) {
+            const campusWhatsApp = this.getAttribute('data-phone');
+
+            const fullMessage = `*New Membership Request*\n\n` +
+                                `*Name:* ${name}\n` +
+                                `*Email:* ${email}\n` +
+                                `*Phone:* ${phone}\n` +
+                                `*Year:* ${year}\n\n` +
+                                `*Message:* ${message}`;
+
+            const encodedMessage = encodeURIComponent(fullMessage);
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${campusWhatsApp}&text=${encodedMessage}`;
+
+            document.getElementById('joinSuccessMessage').style.display = 'block';
+            document.getElementById('joinSuccessMessage').scrollIntoView({ behavior: 'smooth' });
+
+            setTimeout(() => {
+                window.open(whatsappUrl, '_blank');
+            }, 300);
+
+            setTimeout(() => {
                 this.reset();
-                
-                // Scroll to success message
-                document.getElementById('joinSuccessMessage').scrollIntoView({ behavior: 'smooth' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    document.getElementById('joinSuccessMessage').style.display = 'none';
-                }, 5000);
-            }
-        });
-    </script>
+                document.getElementById('joinSuccessMessage').style.display = 'none';
+            }, 5000);
+        }
+    });
+</script>
 </body>
 
 </html>
