@@ -140,12 +140,9 @@ function sendToWhatsApp() {
 document.addEventListener('DOMContentLoaded', function() {
     const joinForm = document.getElementById('joinForm');
 
-    console.log('Script loaded. joinForm found:', joinForm);
-
     if (joinForm) {
         joinForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            console.log('Form submitted!');
 
             const name = document.getElementById('joinName').value.trim();
             const email = document.getElementById('joinEmail').value.trim();
@@ -153,8 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const year = document.getElementById('joinYear').value;
             const message = document.getElementById('joinMessage').value.trim();
             const campusWhatsApp = this.getAttribute('data-phone');
-
-            console.log('Captured values:', { name, email, phone, year, message, campusWhatsApp });
 
             const fullMessage = `*New Membership Request*\n\n` +
                                 `*Name:* ${name}\n` +
@@ -164,15 +159,14 @@ document.addEventListener('DOMContentLoaded', function() {
                                 `*Message:* ${message}`;
 
             const encodedMessage = encodeURIComponent(fullMessage);
-            const whatsappUrl = `https://wa.me/${campusWhatsApp}?text=${encodedMessage}`;
 
-            console.log('WhatsApp URL:', whatsappUrl);
+            // More reliable URL format for pre-filled messages
+            const whatsappUrl = `https://api.whatsapp.com/send?phone=${campusWhatsApp}&text=${encodedMessage}`;
 
             const successMsg = document.getElementById('joinSuccessMessage');
             if (successMsg) successMsg.style.display = 'block';
 
             setTimeout(() => {
-                console.log('Opening WhatsApp now...');
                 window.open(whatsappUrl, '_blank');
 
                 setTimeout(() => {
@@ -181,7 +175,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 5000);
             }, 300);
         });
-    } else {
-        console.error('joinForm NOT FOUND in the DOM!');
     }
 });
