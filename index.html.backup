@@ -640,7 +640,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-1.jpg" alt="JCC Chairman">
+                            <img class="img-fluid mb-4" src="img/jcc chair.webp" alt="JCC Chairman">
                             <h3>JCC Chairman</h3>
                             <span>Leadership and Strategy</span>
                         </div>
@@ -655,7 +655,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.13s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-2.jpg" alt="JCC Secretary">
+                            <img class="img-fluid mb-4" src="img/ruth.webp" alt="JCC Secretary">
                             <h3>JCC Secretary</h3>
                             <span>Administration and Communication</span>
                         </div>
@@ -670,7 +670,7 @@
                 <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                     <div class="team-item d-flex h-100 p-4">
                         <div class="team-detail pe-4">
-                            <img class="img-fluid mb-4" src="img/team-3.jpg" alt="JCC Treasurer">
+                            <img class="img-fluid mb-4" src="img/jcc pc.webpg" alt="JCC Treasurer">
                             <h3>JCC Treasurer</h3>
                             <span>Financial Management</span>
                         </div>
@@ -704,7 +704,7 @@
                             <div class="row g-5 align-items-center">
                                 <div class="col-md-6">
                                     <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-1.jpg" alt="">
+                                        <img class="img-fluid" src="img/testimonial 4.webp" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -733,7 +733,7 @@
                             <div class="row g-5 align-items-center">
                                 <div class="col-md-6">
                                     <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="">
+                                        <img class="img-fluid" src="img/testimonial 1.webp" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -750,8 +750,8 @@
                                                 <i class="fa fa-quote-right fa-2x"></i>
                                             </div>
                                             <div class="ps-3">
-                                                <h5 class="mb-0">Michael Ochieng</h5>
-                                                <span>Kenyatta Campus CU Leader</span>
+                                                <h5 class="mb-0">Mercy Kemboi</h5>
+                                                <span>Upper Kabete Campus Cu Leader</span>
                                             </div>
                                         </div>
                                     </div>
@@ -762,7 +762,7 @@
                             <div class="row g-5 align-items-center">
                                 <div class="col-md-6">
                                     <div class="testimonial-img">
-                                        <img class="img-fluid" src="img/testimonial-3.jpg" alt="">
+                                        <img class="img-fluid" src="img/testimonial 2.webp" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -779,7 +779,7 @@
                                                 <i class="fa fa-quote-right fa-2x"></i>
                                             </div>
                                             <div class="ps-3">
-                                                <h5 class="mb-0">Grace Njoroge</h5>
+                                                <h5 class="mb-0">Gibson Gitau</h5>
                                                 <span>Chiromo Campus CU Member</span>
                                             </div>
                                         </div>
@@ -864,10 +864,10 @@
                             <img class="img-fluid w-100" src="img/gallery 4.webp" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-5.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/footer.webp" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid w-100" src="img/gallery-6.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/footer 2.webp" alt="">
                         </div>
                     </div>
                 </div>
