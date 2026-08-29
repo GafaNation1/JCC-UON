@@ -288,15 +288,244 @@
             <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">
               Connect With University of Nairobi Christian Unions
             </h1>
-            <iframe
-              class="w-100"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.795577442083!2d36.822176!3d-1.292066!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f3e1b8b8b8b8b%3A0x123456789abcdef!2sUniversity%20of%20Nairobi!5e0!3m2!1sen!2ske!4v1603794290143!5m2!1sen!2ske!4v1603794290143!5m2!1sen!2ske"
-              frameborder="0"
-              style="height: 410px; border: 0"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
+            <div class="row g-4">
+              <div class="col-lg-8">
+                <!-- Leaflet Map Container -->
+                <div
+                  id="uon-campuses-map"
+                  style="
+                    height: 480px;
+                    width: 100%;
+                    border-radius: 8px;
+                    z-index: 1;
+                  "
+                ></div>
+
+                <!-- Leaflet CSS & JS -->
+                <link
+                  rel="stylesheet"
+                  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+                />
+                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                <script>
+                  document.addEventListener("DOMContentLoaded", function () {
+                    // Initialize map centered on Nairobi
+                    var map = L.map("uon-campuses-map").setView(
+                      [-1.275, 36.78],
+                      11
+                    );
+
+                    // Add OpenStreetMap tile layer
+                    L.tileLayer(
+                      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                      {
+                        maxZoom: 19,
+                        attribution: "&copy; OpenStreetMap contributors",
+                      }
+                    ).addTo(map);
+
+                    // Define all 8 UoN Campuses with coordinates and details
+                    var campuses = [
+                      {
+                        name: "Main Campus CU",
+                        lat: -1.2804,
+                        lng: 36.8163,
+                        location: "University Way, CBD, Nairobi",
+                        page: "https://mccuon.or.ke/",
+                      },
+                      {
+                        name: "Chiromo Campus CU",
+                        lat: -1.2721,
+                        lng: 36.8066,
+                        location: "Riverside Drive, Nairobi",
+                        page: "campus-chiromo.html",
+                      },
+                      {
+                        name: "Parklands Campus CU",
+                        lat: -1.2644,
+                        lng: 36.8182,
+                        location: "Parklands, Nairobi",
+                        page: "https://www.pccu-uon.com/",
+                      },
+                      {
+                        name: "KNH Campus CU",
+                        lat: -1.3013,
+                        lng: 36.8071,
+                        location: "Kenyatta National Hospital, Ngong Road",
+                        page: "https://medicalschoolcu.org/",
+                      },
+                      {
+                        name: "Kenya Science Campus CU",
+                        lat: -1.3031,
+                        lng: 36.7725,
+                        location: "Ngong Road, Nairobi",
+                        page: "campus-kenya-science.html",
+                      },
+                      {
+                        name: "Lower Kabete Campus CU",
+                        lat: -1.2425,
+                        lng: 36.7388,
+                        location: "Lower Kabete Road, Nairobi",
+                        page: "campus-lower-kabete.html",
+                      },
+                      {
+                        name: "Upper Kabete Campus CU",
+                        lat: -1.2503,
+                        lng: 36.7456,
+                        location: "Off Kapenguria Road, Nairobi",
+                        page: "https://ukccu.org",
+                      },
+                      {
+                        name: "Kikuyu Campus CU",
+                        lat: -1.2476,
+                        lng: 36.6663,
+                        location: "Kikuyu Town, Kiambu County",
+                        page: "campus-kikuyu.html",
+                      },
+                    ];
+
+                    var markers = {};
+
+                    // Loop through campuses and add markers with interactive popups
+                    campuses.forEach(function (c) {
+                      var popupContent = `
+                        <div style="font-family: Arial, sans-serif; min-width: 160px;">
+                          <h6 style="margin: 0 0 5px; color: #0057a8; font-weight: bold;">${c.name}</h6>
+                          <p style="margin: 0 0 8px; font-size: 12px; color: #555;"><i class="fa fa-map-marker-alt" style="color:#0057a8;"></i> ${c.location}</p>
+                          <a href="${c.page}" class="btn btn-sm btn-primary text-white" style="font-size: 11px; padding: 2px 8px; display: inline-block;">Visit Campus CU</a>
+                        </div>
+                      `;
+
+                      var marker = L.marker([c.lat, c.lng])
+                        .addTo(map)
+                        .bindPopup(popupContent);
+                      markers[c.name] = {
+                        marker: marker,
+                        lat: c.lat,
+                        lng: c.lng,
+                      };
+                    });
+
+                    // Search Filter & Focus Functionality
+                    var searchInput = document.getElementById(
+                      "campus-search-input"
+                    );
+                    var campusList =
+                      document.getElementById("campus-list-items");
+
+                    window.focusCampus = function (name, lat, lng) {
+                      map.setView([lat, lng], 15);
+                      markers[name].marker.openPopup();
+                    };
+
+                    if (searchInput) {
+                      searchInput.addEventListener("keyup", function () {
+                        var filter = this.value.toLowerCase();
+                        var items = campusList.getElementsByTagName("li");
+                        Array.from(items).forEach(function (item) {
+                          var text = item.textContent || item.innerText;
+                          if (text.toLowerCase().indexOf(filter) > -1) {
+                            item.style.display = "";
+                          } else {
+                            item.style.display = "none";
+                          }
+                        });
+                      });
+                    }
+                  });
+                </script>
+              </div>
+
+              <div class="col-lg-4">
+                <h4 class="mb-3">Find & Select Campus</h4>
+                <!-- Search Input -->
+                <div class="input-group mb-3">
+                  <span class="input-group-text bg-primary text-white"
+                    ><i class="fa fa-search"></i
+                  ></span>
+                  <input
+                    type="text"
+                    id="campus-search-input"
+                    class="form-control"
+                    placeholder="Search campus..."
+                  />
+                </div>
+
+                <!-- Interactive Campus List -->
+                <ul
+                  class="list-unstyled"
+                  id="campus-list-items"
+                  style="max-height: 380px; overflow-y: auto"
+                >
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Chiromo Campus CU', -1.2721, 36.8066)"
+                  >
+                    <strong>Chiromo:</strong>
+                    <span class="text-muted">Riverside Drive, Nairobi</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Kenya Science Campus CU', -1.3031, 36.7725)"
+                  >
+                    <strong>Kenya Science:</strong>
+                    <span class="text-muted">Ngong Road, Nairobi</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Kikuyu Campus CU', -1.2476, 36.6663)"
+                  >
+                    <strong>Kikuyu:</strong>
+                    <span class="text-muted">Kikuyu Town, Kiambu County</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('KNH Campus CU', -1.3013, 36.8071)"
+                  >
+                    <strong>KNH:</strong>
+                    <span class="text-muted"
+                      >Kenyatta National Hospital, Ngong Road</span
+                    >
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Lower Kabete Campus CU', -1.2425, 36.7388)"
+                  >
+                    <strong>Lower Kabete:</strong>
+                    <span class="text-muted">Lower Kabete Road, Nairobi</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Main Campus CU', -1.2804, 36.8163)"
+                  >
+                    <strong>Main Campus:</strong>
+                    <span class="text-muted">University Way, CBD, Nairobi</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Parklands Campus CU', -1.2644, 36.8182)"
+                  >
+                    <strong>Parklands:</strong>
+                    <span class="text-muted">Parklands, Nairobi</span>
+                  </li>
+                  <li
+                    class="mb-2 p-2 rounded border bg-white shadow-sm"
+                    style="cursor: pointer"
+                    onclick="focusCampus('Upper Kabete Campus CU', -1.2503, 36.7456)"
+                  >
+                    <strong>Upper Kabete:</strong>
+                    <span class="text-muted">Off Kapenguria Road, Nairobi</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
             <h4 class="lh-base mb-4">
