@@ -46,6 +46,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   </head>
 
   <body>
@@ -203,393 +206,129 @@
     </div>
     <!-- Page Header End -->
 
-    <!-- Video Start -->
-    <div
-      class="container-fluid bg-primary mb-5 wow fadeIn"
-      data-wow-delay="0.1s"
-    >
-      <div class="container">
-        <div class="row g-0">
-          <div class="col-lg-11">
-            <div class="h-100 py-5 d-flex align-items-center">
-              <button
-                type="button"
-                class="btn-play"
-                data-bs-toggle="modal"
-                data-src="https://www.youtube.com/embed/DWRcNpR6Kdc"
-                data-bs-target="#videoModal"
-              >
-                <span></span>
-              </button>
-              <h3 class="ms-5 mb-0">Get in Touch with JCC Leadership</h3>
-            </div>
-          </div>
-          <div class="d-none d-lg-block col-lg-1">
-            <div
-              class="h-100 w-100 bg-secondary d-flex align-items-center justify-content-center"
-            >
-              <span class="text-white" style="transform: rotate(-90deg)"
-                >Scroll Down</span
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Video End -->
-
-    <!-- Video Modal Start -->
-    <div
-      class="modal fade"
-      id="videoModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content rounded-0">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">
-              JCC Contact Information
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <!-- 16:9 aspect ratio -->
-            <div class="ratio ratio-16x9">
-              <iframe
-                class="embed-responsive-item"
-                src=""
-                id="video"
-                allowfullscreen
-                allowscriptaccess="always"
-                allow="autoplay"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Video Modal End -->
-
     <!-- Contact Start -->
     <div class="container-fluid py-5">
       <div class="container">
-        <div class="row g-5">
-          <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-            <p class="section-title bg-white text-start text-primary pe-3">
-              Contact JCC
-            </p>
-            <h1 class="display-6 mb-4 wow fadeIn" data-wow-delay="0.2s">
-              Connect With University of Nairobi Christian Unions
-            </h1>
-            <div class="row g-4">
-              <div class="col-lg-8">
-                <!-- Leaflet Map Container -->
-                <div
-                  id="uon-campuses-map"
-                  style="
-                    height: 480px;
-                    width: 100%;
-                    border-radius: 8px;
-                    z-index: 1;
-                  "
-                ></div>
+        <!-- Section Header -->
+        <div class="text-center mx-auto mb-5 wow fadeIn" data-wow-delay="0.1s" style="max-width: 700px;">
+          <p class="section-title bg-white text-center text-primary px-3">Contact JCC</p>
+          <h1 class="display-6 mb-4">Connect With University of Nairobi Christian Unions</h1>
+        </div>
 
-                <!-- Leaflet CSS & JS -->
-                <link
-                  rel="stylesheet"
-                  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-                />
-                <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-                <script>
-                  document.addEventListener("DOMContentLoaded", function () {
-                    // Initialize map centered on Nairobi
-                    var map = L.map("uon-campuses-map").setView(
-                      [-1.275, 36.78],
-                      11
-                    );
+        <!-- Campus Interactive Map & Directory (Structured Side-by-Side on Desktop) -->
+        <div class="row g-4 mb-5 wow fadeIn" data-wow-delay="0.2s">
+          <!-- Interactive Map Column -->
+          <div class="col-lg-7">
+            <div id="uon-campuses-map" style="height: 480px; width: 100%; border-radius: 8px; z-index: 1;" class="shadow-sm border"></div>
+          </div>
 
-                    // Add OpenStreetMap tile layer
-                    L.tileLayer(
-                      "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                      {
-                        maxZoom: 19,
-                        attribution: "&copy; OpenStreetMap contributors",
-                      }
-                    ).addTo(map);
-
-                    // Define all 8 UoN Campuses with coordinates and details
-                    var campuses = [
-                      {
-                        name: "Main Campus CU",
-                        lat: -1.2804,
-                        lng: 36.8163,
-                        location: "University Way, CBD, Nairobi",
-                        page: "https://mccuon.or.ke/",
-                      },
-                      {
-                        name: "Chiromo Campus CU",
-                        lat: -1.2721,
-                        lng: 36.8066,
-                        location: "Riverside Drive, Nairobi",
-                        page: "campus-chiromo.html",
-                      },
-                      {
-                        name: "Parklands Campus CU",
-                        lat: -1.2644,
-                        lng: 36.8182,
-                        location: "Parklands, Nairobi",
-                        page: "https://www.pccu-uon.com/",
-                      },
-                      {
-                        name: "KNH Campus CU",
-                        lat: -1.3013,
-                        lng: 36.8071,
-                        location: "Kenyatta National Hospital, Ngong Road",
-                        page: "https://medicalschoolcu.org/",
-                      },
-                      {
-                        name: "Kenya Science Campus CU",
-                        lat: -1.3031,
-                        lng: 36.7725,
-                        location: "Ngong Road, Nairobi",
-                        page: "campus-kenya-science.html",
-                      },
-                      {
-                        name: "Lower Kabete Campus CU",
-                        lat: -1.2425,
-                        lng: 36.7388,
-                        location: "Lower Kabete Road, Nairobi",
-                        page: "campus-lower-kabete.html",
-                      },
-                      {
-                        name: "Upper Kabete Campus CU",
-                        lat: -1.2503,
-                        lng: 36.7456,
-                        location: "Off Kapenguria Road, Nairobi",
-                        page: "https://ukccu.org",
-                      },
-                      {
-                        name: "Kikuyu Campus CU",
-                        lat: -1.2476,
-                        lng: 36.6663,
-                        location: "Kikuyu Town, Kiambu County",
-                        page: "campus-kikuyu.html",
-                      },
-                    ];
-
-                    var markers = {};
-
-                    // Loop through campuses and add markers with interactive popups
-                    campuses.forEach(function (c) {
-                      var popupContent = `
-                        <div style="font-family: Arial, sans-serif; min-width: 160px;">
-                          <h6 style="margin: 0 0 5px; color: #0057a8; font-weight: bold;">${c.name}</h6>
-                          <p style="margin: 0 0 8px; font-size: 12px; color: #555;"><i class="fa fa-map-marker-alt" style="color:#0057a8;"></i> ${c.location}</p>
-                          <a href="${c.page}" class="btn btn-sm btn-primary text-white" style="font-size: 11px; padding: 2px 8px; display: inline-block;">Visit Campus CU</a>
-                        </div>
-                      `;
-
-                      var marker = L.marker([c.lat, c.lng])
-                        .addTo(map)
-                        .bindPopup(popupContent);
-                      markers[c.name] = {
-                        marker: marker,
-                        lat: c.lat,
-                        lng: c.lng,
-                      };
-                    });
-
-                    // Search Filter & Focus Functionality
-                    var searchInput = document.getElementById(
-                      "campus-search-input"
-                    );
-                    var campusList =
-                      document.getElementById("campus-list-items");
-
-                    window.focusCampus = function (name, lat, lng) {
-                      map.setView([lat, lng], 15);
-                      markers[name].marker.openPopup();
-                    };
-
-                    if (searchInput) {
-                      searchInput.addEventListener("keyup", function () {
-                        var filter = this.value.toLowerCase();
-                        var items = campusList.getElementsByTagName("li");
-                        Array.from(items).forEach(function (item) {
-                          var text = item.textContent || item.innerText;
-                          if (text.toLowerCase().indexOf(filter) > -1) {
-                            item.style.display = "";
-                          } else {
-                            item.style.display = "none";
-                          }
-                        });
-                      });
-                    }
-                  });
-                </script>
+          <!-- Campus Finder Sidebar Column -->
+          <div class="col-lg-5">
+            <div class="p-4 bg-light rounded border shadow-sm" style="height: 480px; display: flex; flex-direction: column;">
+              <h4 class="mb-3">Find & Select Campus</h4>
+              
+              <!-- Search Input -->
+              <div class="input-group mb-3">
+                <span class="input-group-text bg-primary text-white"><i class="fa fa-search"></i></span>
+                <input type="text" id="campus-search-input" class="form-control" placeholder="Search campus...">
               </div>
 
-              <div class="col-lg-4">
-                <h4 class="mb-3">Find & Select Campus</h4>
-                <!-- Search Input -->
-                <div class="input-group mb-3">
-                  <span class="input-group-text bg-primary text-white"
-                    ><i class="fa fa-search"></i
-                  ></span>
-                  <input
-                    type="text"
-                    id="campus-search-input"
-                    class="form-control"
-                    placeholder="Search campus..."
-                  />
-                </div>
-
-                <!-- Interactive Campus List -->
-                <ul
-                  class="list-unstyled"
-                  id="campus-list-items"
-                  style="max-height: 380px; overflow-y: auto"
-                >
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Chiromo Campus CU', -1.2721, 36.8066)"
-                  >
-                    <strong>Chiromo:</strong>
-                    <span class="text-muted">Riverside Drive, Nairobi</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Kenya Science Campus CU', -1.3031, 36.7725)"
-                  >
-                    <strong>Kenya Science:</strong>
-                    <span class="text-muted">Ngong Road, Nairobi</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Kikuyu Campus CU', -1.2476, 36.6663)"
-                  >
-                    <strong>Kikuyu:</strong>
-                    <span class="text-muted">Kikuyu Town, Kiambu County</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('KNH Campus CU', -1.3013, 36.8071)"
-                  >
-                    <strong>KNH:</strong>
-                    <span class="text-muted"
-                      >Kenyatta National Hospital, Ngong Road</span
-                    >
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Lower Kabete Campus CU', -1.2425, 36.7388)"
-                  >
-                    <strong>Lower Kabete:</strong>
-                    <span class="text-muted">Lower Kabete Road, Nairobi</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Main Campus CU', -1.2804, 36.8163)"
-                  >
-                    <strong>Main Campus:</strong>
-                    <span class="text-muted">University Way, CBD, Nairobi</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Parklands Campus CU', -1.2644, 36.8182)"
-                  >
-                    <strong>Parklands:</strong>
-                    <span class="text-muted">Parklands, Nairobi</span>
-                  </li>
-                  <li
-                    class="mb-2 p-2 rounded border bg-white shadow-sm"
-                    style="cursor: pointer"
-                    onclick="focusCampus('Upper Kabete Campus CU', -1.2503, 36.7456)"
-                  >
-                    <strong>Upper Kabete:</strong>
-                    <span class="text-muted">Off Kapenguria Road, Nairobi</span>
-                  </li>
-                </ul>
-              </div>
+              <!-- Scrollable Campus List -->
+              <ul class="list-unstyled mb-0" id="campus-list-items" style="overflow-y: auto; flex-grow: 1;">
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Chiromo Campus CU', -1.2721, 36.8066)">
+                  <strong>Chiromo:</strong> <span class="text-muted d-block small">Riverside Drive, Nairobi</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Kenya Science Campus CU', -1.3031, 36.7725)">
+                  <strong>Kenya Science:</strong> <span class="text-muted d-block small">Ngong Road, Nairobi</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Kikuyu Campus CU', -1.2476, 36.6663)">
+                  <strong>Kikuyu:</strong> <span class="text-muted d-block small">Kikuyu Town, Kiambu County</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('KNH Campus CU', -1.3013, 36.8071)">
+                  <strong>KNH:</strong> <span class="text-muted d-block small">Kenyatta National Hospital, Ngong Road</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Lower Kabete Campus CU', -1.2425, 36.7388)">
+                  <strong>Lower Kabete:</strong> <span class="text-muted d-block small">Lower Kabete Road, Nairobi</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Main Campus CU', -1.2804, 36.8163)">
+                  <strong>Main Campus:</strong> <span class="text-muted d-block small">University Way, CBD, Nairobi</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Parklands Campus CU', -1.2644, 36.8182)">
+                  <strong>Parklands:</strong> <span class="text-muted d-block small">Parklands, Nairobi</span>
+                </li>
+                <li class="mb-2 p-2 rounded border bg-white shadow-sm" style="cursor: pointer;" onclick="focusCampus('Upper Kabete Campus CU', -1.2503, 36.7456)">
+                  <strong>Upper Kabete:</strong> <span class="text-muted d-block small">Off Kapenguria Road, Nairobi</span>
+                </li>
+              </ul>
             </div>
           </div>
-          <div class="col-lg-7 wow fadeIn" data-wow-delay="0.3s">
-            <h4 class="lh-base mb-4">
-              For campus-specific inquiries, please contact your local Christian
-              Union directly. Use this form for JCC-wide coordination and
-              general inquiries.
-            </h4>
-            <form>
-              <div class="row g-3">
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      placeholder="Full Name"
-                      required
-                    />
-                    <label for="name">Full Name</label>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="row justify-content-center wow fadeIn" data-wow-delay="0.3s">
+          <div class="col-lg-10">
+            <div class="bg-light p-4 p-md-5 rounded border shadow-sm">
+              <h4 class="lh-base mb-4 text-center">
+                For campus-specific inquiries, please contact your local Christian Union directly. Use this form for JCC-wide coordination and general inquiries.
+              </h4>
+              <form>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Full Name"
+                        required
+                      />
+                      <label for="name">Full Name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email Address"
+                        required
+                      />
+                      <label for="email">Email Address</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="subject"
+                        placeholder="Subject"
+                        required
+                      />
+                      <label for="subject">Subject</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating">
+                      <textarea
+                        class="form-control"
+                        placeholder="Please describe your inquiry in detail."
+                        id="message"
+                        style="height: 180px"
+                        required
+                      ></textarea>
+                      <label for="message">Message</label>
+                    </div>
+                  </div>
+                  <div class="col-12 text-center">
+                    <button class="btn btn-primary py-3 px-5" type="submit">
+                      Send Message
+                    </button>
                   </div>
                 </div>
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      placeholder="Email Address"
-                      required
-                    />
-                    <label for="email">Email Address</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="subject"
-                      placeholder="Subject (e.g., General Inquiry, Event Info, Campus CU Question)"
-                      required
-                    />
-                    <label for="subject">Subject</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <div class="form-floating">
-                    <textarea
-                      class="form-control"
-                      placeholder="Please describe your inquiry in detail. Include your campus if applicable."
-                      id="message"
-                      style="height: 250px"
-                      required
-                    ></textarea>
-                    <label for="message">Message</label>
-                  </div>
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-primary py-3 px-4" type="submit">
-                    Contact JCC
-                  </button>
-                </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -635,8 +374,7 @@
           <div class="col-lg-3 col-md-6">
             <h4 class="text-light mb-4">JCC Office</h4>
             <p class="mb-2">
-              <i class="fa fa-map-marker-alt me-3"></i>University of Nairobi,
-              Main Campus
+              <i class="fa fa-map-marker-alt me-3"></i>University of Nairobi, Main Campus
             </p>
             <p class="mb-2">
               <a
@@ -742,74 +480,67 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <!-- Contact Form Validation Script -->
+    <!-- Leaflet Map Script -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.querySelector("form");
-        if (contactForm) {
-          contactForm.addEventListener("submit", function (e) {
-            e.preventDefault();
+        var map = L.map('uon-campuses-map').setView([-1.275, 36.78], 11);
 
-            // Get form values
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const subject = document.getElementById("subject").value.trim();
-            const message = document.getElementById("message").value.trim();
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 19,
+          attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
 
-            // Clear previous error messages
-            const errorElements = document.querySelectorAll(".is-invalid");
-            errorElements.forEach((el) => el.classList.remove("is-invalid"));
+        var campuses = [
+          { name: "Main Campus CU", lat: -1.2804, lng: 36.8163, location: "University Way, CBD, Nairobi", page: "https://mccuon.or.ke/" },
+          { name: "Chiromo Campus CU", lat: -1.2721, lng: 36.8066, location: "Riverside Drive, Nairobi", page: "campus-chiromo.html" },
+          { name: "Parklands Campus CU", lat: -1.2644, lng: 36.8182, location: "Parklands, Nairobi", page: "https://www.pccu-uon.com/" },
+          { name: "KNH Campus CU", lat: -1.3013, lng: 36.8071, location: "Kenyatta National Hospital, Ngong Road", page: "https://medicalschoolcu.org/" },
+          { name: "Kenya Science Campus CU", lat: -1.3031, lng: 36.7725, location: "Ngong Road, Nairobi", page: "campus-kenya-science.html" },
+          { name: "Lower Kabete Campus CU", lat: -1.2425, lng: 36.7388, location: "Lower Kabete Road, Nairobi", page: "campus-lower-kabete.html" },
+          { name: "Upper Kabete Campus CU", lat: -1.2503, lng: 36.7456, location: "Off Kapenguria Road, Nairobi", page: "https://ukccu.org" },
+          { name: "Kikuyu Campus CU", lat: -1.2476, lng: 36.6663, location: "Kikuyu Town, Kiambu County", page: "campus-kikuyu.html" }
+        ];
 
-            let isValid = true;
+        var markers = {};
 
-            // Validate required fields
-            if (!name) {
-              document.getElementById("name").classList.add("is-invalid");
-              isValid = false;
-            }
-            if (!email || !email.includes("@")) {
-              document.getElementById("email").classList.add("is-invalid");
-              isValid = false;
-            }
-            if (!subject) {
-              document.getElementById("subject").classList.add("is-invalid");
-              isValid = false;
-            }
-            if (!message || message.length < 20) {
-              document.getElementById("message").classList.add("is-invalid");
-              isValid = false;
-            }
+        campuses.forEach(function (c) {
+          var popupContent = `
+            <div style="font-family: Arial, sans-serif; min-width: 160px;">
+              <h6 style="margin: 0 0 5px; color: #0057a8; font-weight: bold;">${c.name}</h6>
+              <p style="margin: 0 0 8px; font-size: 12px; color: #555;"><i class="fa fa-map-marker-alt" style="color:#0057a8;"></i> ${c.location}</p>
+              <a href="${c.page}" class="btn btn-sm btn-primary text-white" style="font-size: 11px; padding: 2px 8px; display: inline-block;">Visit Campus CU</a>
+            </div>
+          `;
 
-            if (isValid) {
-              // Show success message
-              const successDiv = document.createElement("div");
-              successDiv.className = "alert alert-success mt-3";
-              successDiv.innerHTML =
-                "<strong>Thank you " +
-                name +
-                "!</strong> Your message has been received. JCC will respond within 2 business days.";
+          var marker = L.marker([c.lat, c.lng]).addTo(map).bindPopup(popupContent);
+          markers[c.name] = { marker: marker, lat: c.lat, lng: c.lng };
+        });
 
-              // Insert success message after form
-              contactForm.parentNode.insertBefore(
-                successDiv,
-                contactForm.nextSibling
-              );
+        var searchInput = document.getElementById('campus-search-input');
+        var campusList = document.getElementById('campus-list-items');
 
-              // Reset form
-              contactForm.reset();
+        window.focusCampus = function(name, lat, lng) {
+          map.setView([lat, lng], 15);
+          markers[name].marker.openPopup();
+        };
 
-              // Scroll to success message
-              successDiv.scrollIntoView({ behavior: "smooth" });
-
-              // Hide success message after 5 seconds
-              setTimeout(() => {
-                successDiv.remove();
-              }, 5000);
-            }
+        if (searchInput) {
+          searchInput.addEventListener('keyup', function () {
+            var filter = this.value.toLowerCase();
+            var items = campusList.getElementsByTagName('li');
+            Array.from(items).forEach(function (item) {
+              var text = item.textContent || item.innerText;
+              if (text.toLowerCase().indexOf(filter) > -1) {
+                item.style.display = "";
+              } else {
+                item.style.display = "none";
+              }
+            });
           });
         }
       });
